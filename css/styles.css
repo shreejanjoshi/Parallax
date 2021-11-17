@@ -1,14 +1,17 @@
 body{
-    background: black;
+    background: wheat;
 }
 
 #mainCanvas{
     position: absolute;
-    width: 800px;
+    width: 80vw;
     height: 700px;
 
     /* this will make canvas in middle */
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
+
+    background-image: url(../img/11_background.png);
+    box-shadow: 1px 2px 60px rgb(0, 0, 0, 0.4);
 }
