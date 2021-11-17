@@ -6,8 +6,8 @@ const canvas = document.getElementById('mainCanvas');
 const context = canvas.getContext('2d');
 
 //make sure it have correct scaling because if I don't it will set canvas width and height it will default to 300x150 px
-const canvasWidth = canvas.width = 100;
-const canvasHeight = canvas.height = 100;
+const canvasWidth = canvas.width = 800;
+const canvasHeight = canvas.height = 700;
 
 // game speed
 let gameSpeed = 5;
@@ -48,5 +48,22 @@ backgroundTreesAndBushes.src = "img/02_trees and bushes.png";
 const backgroundGround = new Image();
 backgroundGround.src = "img/01_ground.png";
 
+let x = 0;
+//this will contain all the code to loop
+function animate() {
+    // context.drawImage(backgroundDistantClouds5, x, 0) this methode will take image and it will draw it on canvas
+    // 1st argument is the image backgroundDistantClouds5
+    // 0, 0 is codinate from top left corner
+
+    // context.clearRect(0, 0, canvasWidth, canvasHeight); without this we will also see old img and it will overlap each other so to remove that we us this
+    //it is build in method it expect 4 arguments to determine what part of canvas I want to delete
+    context.clearRect(0, 0, canvasWidth, canvasHeight);
+    context.drawImage(backgroundHill2, x, 0)
+    // builtin animation function and pass animate 
+    x-= gameSpeed; //to move
+    requestAnimationFrame(animate);
+}
+//This way animate will run over and over creating animation loop
+animate();
 
 
