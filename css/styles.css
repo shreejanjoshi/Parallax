@@ -1,0 +1,16 @@
+body{
+    background: black;
+}
+
+#mainCanvas{
+    position: absolute;
+    width: 800px;
+    height: 700px;
+
+    /* this will make canvas in middle */
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+    background-image: url(../img/11_background.png);
+}
