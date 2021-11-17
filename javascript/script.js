@@ -58,9 +58,12 @@ function animate() {
     // context.clearRect(0, 0, canvasWidth, canvasHeight); without this we will also see old img and it will overlap each other so to remove that we us this
     //it is build in method it expect 4 arguments to determine what part of canvas I want to delete
     context.clearRect(0, 0, canvasWidth, canvasHeight);
-    context.drawImage(backgroundHill2, x, 0)
+    context.drawImage(backgroundBushes, x, 0)
+
+    //to loop smoothly
+    //if (x < -1000) x = 0;
+    x -= gameSpeed; //to move
     // builtin animation function and pass animate 
-    x-= gameSpeed; //to move
     requestAnimationFrame(animate);
 }
 //This way animate will run over and over creating animation loop
