@@ -50,6 +50,9 @@ backgroundTreesAndBushes.src = "img/02_trees and bushes.png";
 const backgroundGround = new Image();
 backgroundGround.src = "img/01_ground.png";
 
+const backgroundBoy = new Image();
+backgroundBoy.src = "img/idle.gif";
+
 class Layer {
     constructor(image, speedModifier) {
         this.x = 0;

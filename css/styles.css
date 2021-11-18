@@ -1,18 +1,138 @@
 body{
-    background: wheat;
+    margin: 0;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    /* overflow-y: hidden; */
 }
 
 #mainCanvas{
     position: absolute;
-    /* width: 80vw; */
+     /* width: 80vw;  */
     width: 800px;
     height: 700px;
 
-    /* this will make canvas in middle */
+     /* this will make canvas in middle  */
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
 
     background-image: url(../img/11_background.png);
     box-shadow: 1px 2px 60px rgb(0, 0, 0, 0.4);
+}
+
+
+.btn {
+    background: #11cdd4;
+    background-image: -webkit-linear-gradient(top, #11cdd4, #1199e);
+    background-image: -moz-linear-gradient(top, #11cdd4, #1199e);
+    background-image: -ms-linear-gradient(top, #11cdd4, #1199e);
+    background-image: -o-linear-gradient(top, #11cdd4, #1199e);
+    background-image: linear-gradient(to bottom, #11cdd4, #1199e);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #30e3cb;
+    background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+    background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+    text-decoration: none;
+}
+
+.screen{
+    /* height: 100vh; */
+    /* width: 100vw; */
+    height: 80vh;
+    width: 70vw;
+    margin: 5rem auto;
+    background-image: url(../newImg/background.png);
+    background-size: cover;
+    position: relative;
+    box-shadow: 1px 2px 60px rgb(0, 0, 0, 0.4);
+
+    overflow-x: hidden; 
+}
+
+.background{
+    height: 140px;
+    width: 800vw;
+    background-image: url(../newImg/Img_02.png);
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background-repeat: repeat-x;
+}
+
+
+
+/* .background img{
+    margin-top: 330px;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    animation: moveRight 6s linear infinite;
+    
+}  */
+
+.car{
+    width: 10px;
+    height: 100px;
+    bottom: 2%;
+    left: 24%;
+    position: absolute;
+    animation: suspension 1s linear infinite;
+}
+
+.car img{
+    height: 80px;
+}
+
+.key{
+    /* outline: none; */
+    border: 4px solid #404B69;
+    font-size: 1rem;
+    font-family: 'Arvo', cursive;
+    /* line-height: 2; */
+    font-weight: 900;
+    color: #DA0463;
+    text-shadow: 3px 0 #DBEDF3;
+    border-radius: 15px;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    /* margin: 10px; */
+    margin: 0 auto;
+    background-color: white;
+}
+
+@keyframes moveRight {
+    100%{transform: translateX(-2950px)}
+}
+
+@keyframes suspension {
+    100%{
+        transform: translate(-1px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    0%{
+        transform: translateY(-1px);
+    }
+
+}
+
+.moveRight{
+    animation: moveRight 6s linear infinite;
 }
