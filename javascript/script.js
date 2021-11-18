@@ -12,6 +12,8 @@ const canvasHeight = canvas.height = 700;
 // game speed
 let gameSpeed = 3;
 
+let gameFrame = 0;
+
 //this is built in image class constructor it simply creates an image element
 //image constructor have same functionality as the document.createElement("img");
 //this simply creating html image elemeny and saving it in this variable
@@ -54,25 +56,32 @@ class Layer {
         this.y = 0;
         this.width = 800;
         this.height = 700;
-        this.x2 = this.width;
+        //______________________
+        // this.x2 = this.width;
+        //__________________________
         this.image = image;
         this.speedModifier = speedModifier;
         this.speed = gameSpeed * this.speedModifier;
     }
     update() {
         this.speed = gameSpeed * this.speedModifier;
-        if (this.x <= -this.width) {
-            this.x = this.width + this.x2 - this.speed;
-        }
-        if (this.x2 <= -this.width) {
-            this.x2 = this.width + this.x - this.speed;
-        }
-        this.x = Math.floor(this.x - this.speed);
-        this.x2 = Math.floor(this.x2 - this.speed);
+        //this.width is now 700px and game frame is endlessly increasing in number this calc will make sure this.x cyscles endlessly between 0 and the value of the value of this.width 
+        this.x = gameFrame * this.speed % this.width;
+
+        //_____________________________________________
+        // if (this.x <= -this.width) {
+        //     this.x = 0;
+        // }
+        // if (this.x2 <= -this.width) {
+        //     this.x2 = this.width + this.x - this.speed;
+        // }
+        // this.x = Math.floor(this.x - this.speed);
+        // this.x2 = Math.floor(this.x2 - this.speed);
+        //_____________________________________________
     }
     draw() {
         context.drawImage(this.image, this.x, this.y, this.width, this.height);
-        context.drawImage(this.image, this.x2, this.y, this.width, this.height);
+        context.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
     }
 }
 
@@ -119,6 +128,8 @@ function animate() {
     layer9.draw();
     layer10.update();
     layer10.draw();
+
+    gameFrame--;
 
     // builtin animation function and pass animate 
     requestAnimationFrame(animate);
