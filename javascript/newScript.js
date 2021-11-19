@@ -1,33 +1,59 @@
-var key = document.querySelectorAll(".key");
+let key = document.querySelectorAll(".key");
+let stopCarOrStart = document.getElementById("background");
+// let toggle = document.querySelectorAll(".toggle");
 
 for (var i = 0; i < key.length; i++) {
     key[i].addEventListener("click", function () {
 
-    var buttonInnerHTML = this.innerHTML;
-    
-    makeSound(buttonInnerHTML);    
+        var buttonInnerHTML = this.innerHTML;
+
+        makeSound(buttonInnerHTML);
     });
 }
 
-addEventListener("keydown",function(event){
+// toggle.addEventListener('click', () => {
+//     stopCarOrStart.classList.remove('moveRight');
+// })
 
-    makeSound(event.key);
-})
+// var startCar = document.querySelectorAll(".moveRight")
+// stopOrStart.classList.add(".moveRight");
 
-function makeSound(key){
+document.addEventListener("keydown", function (event) {
 
-    if(key == "h"){
+    // makeSound(event.key);
+    let key = event.key;
+    if (key == "h") {
         var audio = new Audio("audio/horn.mp3");
         audio.play();
-    } 
+    }
 
-    if(key == "m"){
+    if (key == "m") {
         var audio = new Audio("audio/music.mp3");
         audio.play();
     }
-    
-    if(key == "s"){
-        var stopOrStart = document.querySelectorAll(".moveRight")
-        stopOrStart.classList.toggle("moveRight");
+
+    // not stoping
+    if (key == "s") {
+        console.log("Hello");
+        stopCarOrStart.classList.toggle("moveRight");
     }
-}
+})
+
+// function makeSound(key) {
+
+//     if (key == "h") {
+//         var audio = new Audio("audio/horn.mp3");
+//         audio.play();
+//     }
+
+//     if (key == "m") {
+//         var audio = new Audio("audio/music.mp3");
+//         audio.play();
+//     }
+
+//     // not stoping
+//     if (key == "s") {
+//         var stopOrStart = document.querySelectorAll(".moveRight")
+//         stopOrStart.classList.remove("moveRight");
+//     }
+// }

@@ -61,7 +61,7 @@ body{
     overflow-x: hidden; 
 }
 
-.background{
+#background{
     height: 140px;
     width: 800vw;
     background-image: url(../newImg/Img_02.png);
