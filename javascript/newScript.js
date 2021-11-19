@@ -1,5 +1,7 @@
 let key = document.querySelectorAll(".key");
 let stopCarOrStart = document.getElementById("background");
+let moveCloudsOrStop = document.getElementById("clouds");
+let moveNearCloudsOrStop = document.getElementById("nearClouds");
 // let toggle = document.querySelectorAll(".toggle");
 
 for (var i = 0; i < key.length; i++) {
@@ -36,6 +38,8 @@ document.addEventListener("keydown", function (event) {
     if (key == "s") {
         console.log("Hello");
         stopCarOrStart.classList.toggle("moveRight");
+        moveCloudsOrStop.classList.toggle("moveRightClouds");
+        moveNearCloudsOrStop.classList.toggle("moveRightNearClouds");
     }
 })
 

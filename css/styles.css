@@ -116,6 +116,28 @@ body{
     background-color: white;
 }
 
+#clouds{
+    height: 140px;
+    width: 800vw;
+    background-image: url(../newImg/10_distant_clouds.png);
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-repeat: repeat-x;
+}
+
+#nearClouds{
+    height: 140px;
+    width: 800vw;
+    background-image: url(../newImg/08_clouds.png);
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-repeat: repeat-x;
+}
+
 @keyframes moveRight {
     100%{transform: translateX(-2950px)}
 }
@@ -135,4 +157,12 @@ body{
 
 .moveRight{
     animation: moveRight 6s linear infinite;
+}
+
+.moveRightClouds{
+    animation: moveRight 50s linear infinite;
+}
+
+.moveRightNearClouds{
+    animation: moveRight 20s linear infinite;
 }
